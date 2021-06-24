@@ -38,7 +38,7 @@ obj/src/%.o: src/lib/%.cpp
 obj/src/%.o: src/mlib/%.cpp
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@ $ -I src/lib -I src/mlib
 
-obj/src/%.o: src/gameOfLife/%.cpp
+obj/src/%.o: src/DSaA/%.cpp
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@  -Isrc/lib -I src/mlib  
 
 test: $(TESTTARGET)
