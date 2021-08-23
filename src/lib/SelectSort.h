@@ -1,8 +1,8 @@
-#ifndef SELECT_SORT_
-#define SELECT_SORT_
+#ifndef SELECT_SORT_H_
+#define SELECT_SORT_H_
 
 #include "ArrayProcessingMethods.h"
 
-int SelectSort(int Mass[], int MassLength);
+void SelectSort(int Mass[], int MassLength);
 
 #endif
