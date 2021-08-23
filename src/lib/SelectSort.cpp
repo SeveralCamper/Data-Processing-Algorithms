@@ -1,18 +1,18 @@
 #include "SelectSort.h"
 
-void SelectSort(int Mass[], int MassLength)
+void SelectSort(int Array[], int ArrayLength)
 {
-	int minMassIndex;
-    for (int i = 0; i < MassLength - 1; i++)
+	int minArrayIndex;
+    for (int i = 0; i < ArrayLength - 1; i++)
     {
-        minMassIndex = i;
-        for (int j = i + 1; j < MassLength; j++)
+        minArrayIndex = i;
+        for (int j = i + 1; j < ArrayLength; j++)
         {
-            if (Mass[j] < Mass[minMassIndex])
+            if (Array[j] < Array[minArrayIndex])
             {
-                minMassIndex = j;
+                minArrayIndex = j;
             }
-        	swap(&Mass[minMassIndex],&Mass[i]);
+        	swap(&Array[minArrayIndex],&Array[i]);
         }
     }
 }

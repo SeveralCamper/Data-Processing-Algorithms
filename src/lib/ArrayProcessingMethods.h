@@ -3,20 +3,20 @@
 
 #include <iostream>
 
-int random (int MassLength);
+int random (int ArrayLength);
 
 void swap (int *xp,int *yp);
 
-void Fillinc(int Mass[],int MassLength);
+void Fillinc(int Array[],int ArrayLength);
 
-void FillDec (int Mass[], int MassLength);
+void FillDec (int Array[], int ArrayLength);
 
-void PrintMas (int Mass[], int MassLength);
+void PrintMas (int Array[], int ArrayLength);
 
-void FillRand (int Mass[], int MassLength, int RigthBorder, int LeftBorder);
+void FillRand (int Array[], int ArrayLength, int RigthBorder, int LeftBorder);
 
-int CheckSum (int Mass[], int MassLength);
+int CheckSum (int Array[], int ArrayLength);
 
-int RunNumber (int Mass[], int MassLength);
+int RunNumber (int Array[], int ArrayLength);
 
-#endif
+#endif 

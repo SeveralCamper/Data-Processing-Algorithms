@@ -1,8 +1,8 @@
 #include "ArrayProcessingMethods.h"
 
-int random (int MassLength)
+int random (int ArrayLength)
 {
-	return rand() % MassLength;
+	return rand() % ArrayLength;
 }
 
 void swap (int *xp,int *yp)
@@ -12,46 +12,46 @@ void swap (int *xp,int *yp)
 	*yp = tmp;
 }
 
-void Fillinc(int Mass[],int MassLength)
+void Fillinc(int Array[],int ArrayLength)
 {
-	for (int i = 0; i < MassLength; i++)
-		Mass[i] += i;
+	for (int i = 0; i < ArrayLength; i++)
+	 Array[i] += i;
 
 }
 
-void FillDec (int Mass[], int MassLength)
+void FillDec (int Array[], int ArrayLength)
 {
-	for (int i = 0; MassLength > 0; i++, MassLength--)
-		Mass[i]= MassLength-1;
+	for (int i = 0; ArrayLength > 0; i++, ArrayLength--)
+	 Array[i]= ArrayLength-1;
 }
 
-void PrintMas (int Mass[], int MassLength)
+void PrintMas (int Array[], int ArrayLength)
 {
-	for (int i=0; i < MassLength; i++)
-		std::cout << Mass[i] << std::endl;
+	for (int i=0; i < ArrayLength; i++)
+		std::cout << Array[i] << std::endl;
 }
 
-void FillRand (int Mass[], int MassLength, int RigthBorder, int LeftBorder)
+void FillRand (int Array[], int ArrayLength, int RigthBorder, int LeftBorder)
 {
-	for (int i = 0; i < MassLength; i++)
-		Mass[i] = random (RigthBorder - LeftBorder + 1) + LeftBorder;
+	for (int i = 0; i < ArrayLength; i++)
+	 Array[i] = random (RigthBorder - LeftBorder + 1) + LeftBorder;
 }
 
-int CheckSum (int Mass[], int MassLength)
+int CheckSum (int Array[], int ArrayLength)
 {
 	int sum = 0;
-	for (int i = 0; i < MassLength; i++)
-		sum = sum + Mass[i];
+	for (int i = 0; i < ArrayLength; i++)
+		sum = sum + Array[i];
 
 	return sum;
 }
 
-int RunNumber (int Mass[], int MassLength)
+int RunNumber (int Array[], int ArrayLength)
 {
 	int k = 0;
-	for (int i=0; i < MassLength; i++)
+	for (int i=0; i < ArrayLength; i++)
 	{
-		if (Mass[i] > Mass[i+1])
+		if  (Array[i] > Array[i+1])
 		k += 1;
 	}
 	return k;

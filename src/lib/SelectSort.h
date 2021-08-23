@@ -3,6 +3,6 @@
 
 #include "ArrayProcessingMethods.h"
 
-void SelectSort(int Mass[], int MassLength);
+void SelectSort(int Array[], int ArrayLength);
 
 #endif
