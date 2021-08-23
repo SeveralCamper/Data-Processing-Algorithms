@@ -1,5 +1,4 @@
-#include <iostream>
-#include "Array Processing Methods.cpp"
+#include "SelectSort.h"
 
 int SelectSort(int Mass[], int MassLength)
 {
@@ -16,4 +15,6 @@ int SelectSort(int Mass[], int MassLength)
         	swap(&Mass[minMassIndex],&Mass[i]);
         }
     }
+    return 1;
 }
+

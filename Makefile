@@ -2,9 +2,9 @@ CFLAGS := -Wall -Werror -std=c++17
 CPPFLAGS := -MMD
 CXX := g++
 
-TARGET := bin/DSaA
+TARGET := bin/DSA
 
-SOURCES := $(wildcard src/DSaA/*.cpp)
+SOURCES := $(wildcard src/DSA/main.cpp)
 LIBSOURCES := $(wildcard src/lib/*.cpp)
 LIBMSOURCES := $(wildcard src/mlib/*.cpp)
 
@@ -14,11 +14,11 @@ LIB := obj/lib/functionLib.a
 MLIBOBJ := $(patsubst src/mlib/%.cpp, obj/src/%.o, $(LIBMSOURCES))
 MLIB := obj/mlib/methodsLib.a
 
-OBJ := $(patsubst src/DSaA/%.cpp, obj/src/%.o, $(SOURCES))
+OBJ := $(patsubst src/DSA/%.cpp, obj/src/%.o, $(SOURCES))
 
 TEST := $(wildcard test/*.cpp)
 TESTOBJ := $(patsubst test/%.cpp, obj/test/%.o, $(TEST))
-TESTTARGET := bin/TestDSaA
+TESTTARGET := bin/TestDSA
 CTEST := thirdparty/ctest.h
 
 all:$(TARGET)
@@ -38,7 +38,7 @@ obj/src/%.o: src/lib/%.cpp
 obj/src/%.o: src/mlib/%.cpp
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@ $ -I src/lib -I src/mlib
 
-obj/src/%.o: src/DSaA/%.cpp
+obj/src/%.o: src/DSA/%.cpp
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@  -Isrc/lib -I src/mlib  
 
 test: $(TESTTARGET)
@@ -51,14 +51,15 @@ obj/test/%.o: test/%.cpp $(CTEST)
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@ -L. $(MLIB) -L. $(LIB)  -Isrc/lib -I src/mlib -I thirdparty
 
 run: $(TARGET)
-	./bin/DSaA
+	./bin/DSA
+
 
 clean:
 	find . -name "*.o" -exec rm '{}' \;
 	find . -name "*.d" -exec rm '{}' \;
 	find . -name "*.a" -exec rm '{}' \;
-	find ./bin -type f -name "DSaA" -exec rm -f '{}' \;
-	find ./bin -type f -name "TestDSaA" -exec rm -f '{}' \;
+	find ./bin -type f -name "DSA" -exec rm -f '{}' \;
+	find ./bin -type f -name "TestDSA" -exec rm -f '{}' \;
 
 format:
 	cd src; find . -name "*.cpp" -exec clang-format -i {} \;

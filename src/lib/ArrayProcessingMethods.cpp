@@ -1,5 +1,4 @@
-#include <iostream>
-#include <stdlib.h>
+#include "ArrayProcessingMethods.h"
 
 int random (int MassLength)
 {
@@ -29,7 +28,7 @@ void FillDec (int Mass[], int MassLength)
 void PrintMas (int Mass[], int MassLength)
 {
 	for (int i=0; i < MassLength; i++)
-		printf ("%d; ", Mass[i]);
+		std::cout << Mass[i] << std::endl;
 }
 
 void FillRand (int Mass[], int MassLength, int RigthBorder, int LeftBorder)
