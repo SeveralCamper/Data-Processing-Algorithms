@@ -59,7 +59,7 @@ clean:
 	find . -name "*.d" -exec rm '{}' \;
 	find . -name "*.a" -exec rm '{}' \;
 	find ./bin -type f -name "DSA" -exec rm -f '{}' \;
-	find ./bin -type f -name "TestDSA' -exec rm -f '{}' \;
+	find ./bin -type f -name "TestDSA" -exec rm -f '{}' \;
 
 format:
 	cd src; find . -name "*.cpp" -exec clang-format -i {} \;
