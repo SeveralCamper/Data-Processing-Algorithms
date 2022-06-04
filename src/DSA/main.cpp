@@ -8,6 +8,7 @@ int main () {
     FillRand(Massive, MassLength,50,500);
     PrintMas(Massive, MassLength);
     std::cout << std::endl;
-    SelectSort(Massive, MassLength);
+    //SelectSort(Massive, MassLength);
+    BubbleSort(Massive, MassLength);
     PrintMas(Massive, MassLength);
 }
