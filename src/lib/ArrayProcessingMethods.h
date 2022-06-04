@@ -5,7 +5,7 @@
 
 int random (int ArrayLength);
 
-void swap (int *xp,int *yp);
+void swap (int *xp, int *yp);
 
 void Fillinc(int Array[],int ArrayLength);
 
@@ -19,4 +19,4 @@ int CheckSum (int Array[], int ArrayLength);
 
 int RunNumber (int Array[], int ArrayLength);
 
-#endif 
+#endif // ARRAY_PROCESSING_METHODS_H_
