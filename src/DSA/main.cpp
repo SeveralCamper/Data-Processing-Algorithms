@@ -2,6 +2,7 @@
 #include <SelectSort.h>
 #include <BubbleSort.h>
 #include <ShakerSort.h>
+#include <InsertSort.h>
 
 int main () {   	
     int MassLength = 100;
@@ -11,6 +12,7 @@ int main () {
     std::cout << std::endl;
     // SelectSort(Massive, MassLength);
     // BubbleSort(Massive, MassLength);
-    ShakerSort(Massive, MassLength);
+    // ShakerSort(Massive, MassLength);
+    InsertSort(Massive, MassLength);
     PrintMas(Massive, MassLength);
 }
