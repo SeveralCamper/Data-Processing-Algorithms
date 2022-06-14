@@ -1,17 +1,18 @@
 #include "ShellSort.h"
 
 void ShellSort(int * Array, int ArrayLength) {
-    for (int k = ArrayLength/2; k > 0; k = k/2) {
+    int spliting_step = ArrayLength/2;
+    while (spliting_step > 0) {
         int tmp, j;
-        for (int i = k + 1; i < ArrayLength; i++) {
+        for (int i = spliting_step; i < ArrayLength; i++) {
             tmp = Array[i];
-            j = i - k;
-            for (; j > 0 && tmp < Array[j]; j--) {
-                Array[j + k] = Array[j];
-                j = j - k;
+            for (j = i - spliting_step; j >= 0 && tmp < Array[j]; j = j - spliting_step) {
+                Array[j + spliting_step] = Array[j];
             }
 
-            Array[j+ k] = tmp;
+            Array[j + spliting_step] = tmp;
         }
+
+        spliting_step = spliting_step/2;
     }
 }
