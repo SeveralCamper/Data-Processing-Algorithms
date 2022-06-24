@@ -1,10 +1,11 @@
 #include <iostream>
-#include <SelectSort.h>
-#include <BubbleSort.h>
-#include <ShakerSort.h>
-#include <InsertSort.h>
-#include <ShellSort.h>
-#include <HeapSort.h>
+#include "SelectSort.h"
+#include "BubbleSort.h"
+#include "ShakerSort.h"
+#include "InsertSort.h"
+#include "ShellSort.h"
+#include "HeapSort.h"
+#include "QuickSort.h"
 
 int main () {   	
     int MassLength = 100;
@@ -22,6 +23,7 @@ int main () {
     // ShellSort(Massive, MassLength);
 
     // Быстрые методы сортировки
-    HeapSort(Massive, MassLength);
+    // HeapSort(Massive, MassLength);
+    QuickSort(Massive, 0, MassLength - 1);
     PrintMas(Massive, MassLength);
 }
