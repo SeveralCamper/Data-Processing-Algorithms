@@ -1,13 +1,17 @@
 #include "BubbleSort.h"
 
-void BubbleSort(int Array[], int ArrayLength) {
-    for (int i = ArrayLength - 1; i < 0; i--) {
-        for (int j = i; j < 0; j--) {
+void BubbleSort(int * Array, int ArrayLength) {
+    for (int  i = ArrayLength; i > 0; i--) {
+        bool flag = true;
+        for (int j = ArrayLength - 1; j > ArrayLength - i; j--) {
             if (Array[j] < Array[j - 1]) {
-                int tmp = Array[j];
-                Array[j] = Array[j-1];
-                Array[j-1] = tmp;
+                flag = false;
+                swap(&Array[j], &Array[j - 1]);
             }
+        }
+
+        if (flag) {
+            break;
         }
     }
 }
