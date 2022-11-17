@@ -23,7 +23,14 @@ void FillDec (int Array[], int ArrayLength) {
 
 void PrintMas (int Array[], int ArrayLength) {
 	for (int i = 0; i < ArrayLength; i++)
-		std::cout << Array[i] << std::endl;
+		std::cout << Array[i] << ' ';
+	std::cout << std::endl;
+}
+
+void PrintMasChar (char Array[], int ArrayLength) {
+	for (int i = 0; i < ArrayLength; i++)
+		std::cout << Array[i] << ' ';
+	std::cout << std::endl;
 }
 
 void FillRand (int Array[], int ArrayLength, int RigthBorder, int LeftBorder) {

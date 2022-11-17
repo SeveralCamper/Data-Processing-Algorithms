@@ -20,5 +20,7 @@ int BSearch(int * Array, int ArrayLength, int key) {
 }
 
 int *BSearchAll(int * Array, int ArrayLength, int key) {
+    int *index_array = new int[ArrayLength];
     
+    return index_array;
 }

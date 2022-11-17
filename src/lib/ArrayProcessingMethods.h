@@ -13,6 +13,8 @@ void FillDec (int Array[], int ArrayLength);
 
 void PrintMas (int Array[], int ArrayLength);
 
+void PrintMasChar (char Array[], int ArrayLength);
+
 void FillRand (int Array[], int ArrayLength, int RigthBorder, int LeftBorder);
 
 int CheckSum (int Array[], int ArrayLength);

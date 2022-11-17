@@ -7,6 +7,7 @@
 #include "HeapSort.h"
 #include "QuickSort.h"
 #include "BinarySearch.h"
+#include "PhoneBook.h"
 
 int main () {   	
     int MassLength = 10;
@@ -29,6 +30,14 @@ int main () {
     PrintMas(Massive, MassLength);
 
     std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) << std::endl;
+
+    phonebook_t PhoneBook;
+    InitPhoneBook(&PhoneBook, 10);
+    PrintPhoneBook(&PhoneBook, 10);
+    SelectSortAge(&PhoneBook, 10);
+    std::cout << std::endl;
+    PrintPhoneBook(&PhoneBook, 10);
+
 
     // PrintMas(Massive, MassLength);
 }
