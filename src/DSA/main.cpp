@@ -6,11 +6,12 @@
 #include "ShellSort.h"
 #include "HeapSort.h"
 #include "QuickSort.h"
+#include "BinarySearch.h"
 
 int main () {   	
-    int MassLength = 100;
+    int MassLength = 10;
     int Massive[MassLength];
-    FillRand(Massive, MassLength,50,500);
+    FillRand(Massive, MassLength, 10, 50);
     PrintMas(Massive, MassLength);
     std::cout << std::endl;
     // Методы квадратичной трудоемкости
@@ -26,4 +27,8 @@ int main () {
     // HeapSort(Massive, MassLength);
     QuickSort(Massive, 0, MassLength - 1);
     PrintMas(Massive, MassLength);
+
+    std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) << std::endl;
+
+    // PrintMas(Massive, MassLength);
 }
