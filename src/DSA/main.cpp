@@ -33,12 +33,13 @@ int main () {
 
     phonebook_t PhoneBook;
     InitPhoneBook(&PhoneBook, MassLength);
-    PrintPhoneBook(&PhoneBook, MassLength);
-    SelectSortAge(&PhoneBook, MassLength);
+    PrintPhoneBook(&PhoneBook);
+    SelectSortAge(&PhoneBook);
     std::cout << "New" << std::endl;
-    PrintPhoneBook(&PhoneBook, MassLength);
-    SelectSortIndex(&PhoneBook, MassLength);
-    PrintPhoneBook(&PhoneBook, MassLength);
+    PrintPhoneBook(&PhoneBook);
+    SelectSortIndex(&PhoneBook);
+    PrintPhoneBook(&PhoneBook);
+    // PhoneBookPopBack(&PhoneBook);
 
     // PrintMas(Massive, MassLength);
 }
