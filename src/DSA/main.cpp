@@ -33,13 +33,28 @@ int main () {
 
     phonebook_t PhoneBook;
     InitPhoneBook(&PhoneBook, MassLength);
-    PrintPhoneBook(&PhoneBook);
+    // PrintPhoneBook(&PhoneBook);
     SelectSortAge(&PhoneBook);
     std::cout << "New" << std::endl;
-    PrintPhoneBook(&PhoneBook);
+    // PrintPhoneBook(&PhoneBook);
     SelectSortIndex(&PhoneBook);
-    PrintPhoneBook(&PhoneBook);
-    // PhoneBookPopBack(&PhoneBook);
+    // PrintPhoneBook(&PhoneBook);
+    for (int i = 0; i < MassLength - 1; i++) {
+        std::cout << "New PhoneBook:" << std::endl << std::endl;
+        PhoneBookPopBack(&PhoneBook);
+        PrintPhoneBook(&PhoneBook);
+        MassLength = MassLength - 1;
+        std::cout << std::endl;
+    }
+
+    std::cout << std::endl << "BIG PhoneBook:" << std::endl << std::endl;
+
+    for (int i = 0; i < MassLength; i++) {
+        std::cout << "New PhoneBook:" << std::endl << std::endl;
+        PhoneBookPushBack(&PhoneBook, PhoneBook.phone_book_[i]);
+        PrintPhoneBook(&PhoneBook);
+        std::cout << std::endl;
+    }
 
     // PrintMas(Massive, MassLength);
 }

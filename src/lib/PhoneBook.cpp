@@ -16,32 +16,42 @@ phonebooknode_t InitPhoneBookNode(int index, int age, int *phone_numbers, char *
     phonebooknode_t node;
     node.age_ = age;
     node.index_ = index; 
+    node.phone_numbers_ = new int[11];
     node.phone_numbers_ = phone_numbers; 
+    node.owner_name_ = new char[25];
     node.owner_name_ = owner_name; 
 
     return node;
 }
 
 void PhoneBookPopBack(phonebook_t *phone_book) {
-    phone_book->phone_book_[phone_book->length_ - 1].age_ = 0;
-    phone_book->phone_book_[phone_book->length_ - 1].index_ = 0;
-    delete(phone_book->phone_book_[phone_book->length_ - 1].owner_name_);
-    delete(phone_book->phone_book_[phone_book->length_ - 1].phone_numbers_);
-    for (int i = 0; i < phone_book->length_ - 1; i++) {
-
+    phone_book->length_ = phone_book->length_ - 1;
+    phonebooknode_t *phone_book_tmp = new phonebooknode_t[phone_book->length_];
+    for (int i = 0; i < phone_book->length_; i++) {
+        phone_book_tmp[i] = phone_book->phone_book_[i];
+        phone_book_tmp[i].owner_name_ = new char[25];
+        phone_book_tmp[i].phone_numbers_ = new int[11];
+        phone_book_tmp[i].owner_name_ = phone_book->phone_book_[i].owner_name_;
+        phone_book_tmp[i].phone_numbers_ = phone_book->phone_book_[i].phone_numbers_;
     }
+
+    phone_book_tmp[phone_book->length_ + 1].age_ = 0;
+    phone_book_tmp[phone_book->length_ + 1].index_ = 0;
+    delete(phone_book_tmp[phone_book->length_ + 1].owner_name_);
+    delete(phone_book_tmp[phone_book->length_ + 1].phone_numbers_);
+    delete(phone_book->phone_book_);
+    phone_book->phone_book_ = phone_book_tmp;
 }
 
 void InitPhoneBook(phonebook_t *phone_book, int length) {
     phone_book->length_ = length;
     phone_book->phone_book_ = new phonebooknode_t[length];
     for (int i = 0; i < length; i++) {
-        int *new_telephone_num = new int[11];
         char *new_name = new char[25];
+        int *new_telephone_num = new int[11];
         new_telephone_num[0] = 8;
         new_name[0] = 'A';
         for (int j = 1; j < 11; j++) {
-            std::cout << i << std::endl;
             new_telephone_num[j] = random(10);
             new_name[j] = 'a' + j;
         }
@@ -50,7 +60,15 @@ void InitPhoneBook(phonebook_t *phone_book, int length) {
 }
 
 void PhoneBookPushBack(phonebook_t *phone_book, phonebooknode_t phobe_book_node) {
+    phone_book->length_ = phone_book->length_ + 1;
+    phonebooknode_t *phone_book_tmp = new phonebooknode_t[phone_book->length_];
+    for (int i = 0; i < phone_book->length_ - 1; i++) {
+        phone_book_tmp[i] = phone_book->phone_book_[i];
+    }
+    phone_book_tmp[phone_book->length_ - 1] = phobe_book_node;
 
+    delete(phone_book->phone_book_);
+    phone_book->phone_book_ = phone_book_tmp;
 }
 
 void PrintPhoneBook(phonebook_t *phone_book) {
