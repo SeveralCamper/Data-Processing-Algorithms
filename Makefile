@@ -29,6 +29,10 @@ obj/src/%.o: src/DSA/%.cpp
 run: $(TARGET)
 	./bin/DSA
 
+check_leaks:
+	valgrind --track-origins=yes --leak-check=full  ./$(TARGET)
+
+
 rebuild: clean all
 
 clean:

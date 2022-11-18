@@ -2,12 +2,44 @@
 
 phonebooknode_t PhoneBookAgeSearch(phonebook_t *phone_book, int age) {
     phonebooknode_t node;
+    node.age_ = 0;
+    node.index_ = 0;
+    node.owner_name_ = new char[25];
+    node.phone_numbers_ = new int[11];
+    int left = 0, middle = 0, right = phone_book->phone_book_[phone_book->length_ - 1].index_;
+    while (left <= right) {
+        middle = (left + right) / 2;
+        if (phone_book->phone_book_[middle].age_ == age) {
+            node = phone_book->phone_book_[middle];
+            break;
+        } else if (phone_book->phone_book_[middle].age_ < age) {
+            left = middle + 1;
+        } else {
+            right = middle - 1;
+        }
+    }
 
     return node;
 }
 
 phonebooknode_t PhoneBookIndexSearch(phonebook_t *phone_book, int index) {
     phonebooknode_t node;
+    node.age_ = 0;
+    node.index_ = 0;
+    node.owner_name_ = new char[25];
+    node.phone_numbers_ = new int[11];
+    int left = 0, middle = 0, right = phone_book->phone_book_[phone_book->length_ - 1].index_;
+    while (left <= right) {
+        middle = (left + right) / 2;
+        if (phone_book->phone_book_[middle].index_ == index) {
+            node = phone_book->phone_book_[middle];
+            break;
+        } else if (phone_book->phone_book_[middle].index_ < index) {
+            left = middle + 1;
+        } else {
+            right = middle - 1;
+        }
+    }
 
     return node;
 }
@@ -71,13 +103,25 @@ void PhoneBookPushBack(phonebook_t *phone_book, phonebooknode_t phobe_book_node)
     phone_book->phone_book_ = phone_book_tmp;
 }
 
+void PrintPhoneBookNode(phonebooknode_t *phone_book_node) {
+    if (phone_book_node == nullptr) {
+        std::cout << "It's empty!" <<std::endl;
+    } else {
+        std::cout << "Index: " << phone_book_node->index_ << std::endl;
+        std::cout << "Age: " << phone_book_node->age_ << std::endl;
+        PrintMas(phone_book_node->phone_numbers_, 11);
+        PrintMasChar(phone_book_node->owner_name_, 25);
+        std::cout << std::endl;   
+    } 
+}
+
 void PrintPhoneBook(phonebook_t *phone_book) {
-    for (int i = 0; i < phone_book->length_; i++) {
-        std::cout << "Index: " << phone_book->phone_book_[i].index_ << std::endl;
-        std::cout << "Age: " << phone_book->phone_book_[i].age_ << std::endl;
-        PrintMas(phone_book->phone_book_[i].phone_numbers_, 11);
-        PrintMasChar(phone_book->phone_book_[i].owner_name_, 25);
-        std::cout << std::endl;
+    if (phone_book == nullptr) {
+        std::cout << "It's empty!" <<std::endl;
+    } else {
+        for (int i = 0; i < phone_book->length_; i++) {
+            PrintPhoneBookNode(&phone_book->phone_book_[i]);
+        }
     }
 }
 

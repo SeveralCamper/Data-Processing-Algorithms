@@ -23,6 +23,7 @@ void PrintPhoneBook(phonebook_t *phone_book);
 void SelectSortIndex(phonebook_t *phone_book);
 void PhoneBookPopBack(phonebook_t *phone_book);
 void InitPhoneBook(phonebook_t *phone_book, int length);
+void PrintPhoneBookNode(phonebooknode_t *phone_book_node);
 void PhoneBookPushBack(phonebook_t *phone_book, phonebooknode_t phobe_book_node);
 
 #endif  // PHONE_BOOK_H_
