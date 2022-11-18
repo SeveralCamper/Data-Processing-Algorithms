@@ -65,7 +65,7 @@ void SelectSortAge(phonebook_t *phone_book, int length) {
     for (int i = 0; i < length - 1; i++) {
         minArrayIndex = i;
         for (int j = i + 1; j < length; j++) {
-            if (phone_book->phone_book_[i].age_ < phone_book->phone_book_[minArrayIndex].age_) {
+            if (phone_book->phone_book_[j].age_ < phone_book->phone_book_[minArrayIndex].age_) {
                 minArrayIndex = j;
             }
         }
@@ -80,7 +80,7 @@ void SelectSortIndex(phonebook_t *phone_book, int length) {
     for (int i = 0; i < length - 1; i++) {
         minArrayIndex = i;
         for (int j = i + 1; j < length; j++) {
-            if (phone_book->phone_book_[i].index_ < phone_book->phone_book_[minArrayIndex].index_) {
+            if (phone_book->phone_book_[j].index_ < phone_book->phone_book_[minArrayIndex].index_) {
                 minArrayIndex = j;
             }
         }

@@ -32,12 +32,13 @@ int main () {
     std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) << std::endl;
 
     phonebook_t PhoneBook;
-    InitPhoneBook(&PhoneBook, 10);
-    PrintPhoneBook(&PhoneBook, 10);
-    SelectSortAge(&PhoneBook, 10);
-    std::cout << std::endl;
-    PrintPhoneBook(&PhoneBook, 10);
-
+    InitPhoneBook(&PhoneBook, MassLength);
+    PrintPhoneBook(&PhoneBook, MassLength);
+    SelectSortAge(&PhoneBook, MassLength);
+    std::cout << "New" << std::endl;
+    PrintPhoneBook(&PhoneBook, MassLength);
+    SelectSortIndex(&PhoneBook, MassLength);
+    PrintPhoneBook(&PhoneBook, MassLength);
 
     // PrintMas(Massive, MassLength);
 }
