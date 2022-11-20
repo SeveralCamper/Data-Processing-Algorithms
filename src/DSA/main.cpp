@@ -33,8 +33,8 @@ int main () {
 
     phonebook_t PhoneBook;
     InitPhoneBook(&PhoneBook, MassLength);
-    // PrintPhoneBook(&PhoneBook);
-    /* for (int i = 0; i < MassLength - 1; i++) {
+    PrintPhoneBook(&PhoneBook);
+    for (int i = 0; i < MassLength - 1; i++) {
         std::cout << "New PhoneBook:" << std::endl << std::endl;
         PhoneBookPopBack(&PhoneBook);
         PrintPhoneBook(&PhoneBook);
@@ -49,11 +49,11 @@ int main () {
         PhoneBookPushBack(&PhoneBook, PhoneBook.phone_book_[i]);
         PrintPhoneBook(&PhoneBook);
         std::cout << std::endl;
-    } */
+    }
 
 
     // IN BLOCK!
-    /* SelectSortAge(&PhoneBook);
+    SelectSortAge(&PhoneBook);
     phonebooknode_t search = PhoneBookAgeSearch(&PhoneBook, 27);
     PrintPhoneBook(&PhoneBook);
     std::cout << "Searching node: " << std::endl;
@@ -64,7 +64,7 @@ int main () {
     search = PhoneBookIndexSearch(&PhoneBook, 3);
     PrintPhoneBook(&PhoneBook);
     std::cout << "Searching node: " << std::endl;
-    PrintPhoneBookNode(&search); */
+    PrintPhoneBookNode(&search);
 
-    // PrintMas(Massive, MassLength);
+    return 0;
 }

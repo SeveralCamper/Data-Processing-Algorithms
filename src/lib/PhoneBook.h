@@ -5,13 +5,13 @@
 
 typedef struct phoneBookNode {
     int index_ = 0, age_ = 0;
-    int *phone_numbers_;
-    char *owner_name_;
+    int phone_numbers_[11];
+    char owner_name_[25];
 } phonebooknode_t;
 
 typedef struct phoneBook{
     int length_ = 0;
-    phonebooknode_t *phone_book_;
+    phonebooknode_t phone_book_[10];
 } phonebook_t;
 
 phonebooknode_t PhoneBookAgeSearch(phonebook_t *phone_book, int age);
