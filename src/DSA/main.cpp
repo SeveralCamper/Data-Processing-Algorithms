@@ -8,6 +8,7 @@
 #include "QuickSort.h"
 #include "BinarySearch.h"
 #include "PhoneBook.h"
+#include "ListProcessingMethods.h"
 
 int main () {   	
     int MassLength = 10;
@@ -15,23 +16,23 @@ int main () {
     FillRand(Massive, MassLength, 10, 50);
     PrintMas(Massive, MassLength);
     std::cout << std::endl;
-    // Методы квадратичной трудоемкости
-    // SelectSort(Massive, MassLength);
-    // BubbleSort(Massive, MassLength);
-    // ShakerSort(Massive, MassLength);
-    // InsertSort(Massive, MassLength);
+    /* Методы квадратичной трудоемкости
+    SelectSort(Massive, MassLength);
+    BubbleSort(Massive, MassLength);
+    ShakerSort(Massive, MassLength);
+    InsertSort(Massive, MassLength);
 
-    // Метод тредоемкости (n)^1.2
-    // ShellSort(Massive, MassLength);
+    Метод тредоемкости (n)^1.2
+    ShellSort(Massive, MassLength);
 
-    // Быстрые методы сортировки
-    // HeapSort(Massive, MassLength);
+    Быстрые методы сортировки
+    HeapSort(Massive, MassLength);
     QuickSort(Massive, 0, MassLength - 1);
     PrintMas(Massive, MassLength);
 
-    std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) << std::endl;
+    std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) << std::endl; */
 
-    phonebook_t PhoneBook;
+    /* phonebook_t PhoneBook;
     InitPhoneBook(&PhoneBook, MassLength);
     PrintPhoneBook(&PhoneBook);
     for (int i = 0; i < MassLength - 1; i++) {
@@ -64,7 +65,14 @@ int main () {
     search = PhoneBookIndexSearch(&PhoneBook, 3);
     PrintPhoneBook(&PhoneBook);
     std::cout << "Searching node: " << std::endl;
-    PrintPhoneBookNode(&search);
+    PrintPhoneBookNode(&search); */
+
+    list_t *queue = CreateList();
+    DeleteList(queue);
+    for (int i = 0; i < 5; i++) {
+        PushBackList(queue, i);
+    }
+
 
     return 0;
 }
