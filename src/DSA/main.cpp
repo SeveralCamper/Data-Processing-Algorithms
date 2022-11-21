@@ -88,6 +88,7 @@ int main () {
     for (int i = 0 ; i < 10 ; i++) {
         node_t *new_node = PopBackList(queue);
         std::cout << new_node->data_ << std::endl;
+        delete(new_node);
     }
     PrintList(queue);
     for (int i = 0; i < 10; i++) {
@@ -96,9 +97,16 @@ int main () {
     for (int i = 0 ; i < 10 ; i++) {
         node_t *new_node = PopFrontList(queue);
         std::cout << new_node->data_ << std::endl;
+        delete(new_node);
     }
     std::cout << queue->size_ << std::endl;
     PrintList(queue);
+
+    for (int i = 0; i < 20; i++) {
+        PushFrontList(queue, i);
+    }
+    PrintList(queue);
+
     DeleteList(queue);
 
     return 0;
