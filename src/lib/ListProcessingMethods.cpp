@@ -159,6 +159,7 @@ node_t *PopFrontList(list_t *list) {
     } else {
         res = list->head_;
         list->head_ = list->head_->next_;
+        list->size_--;
     }
 
     return res;

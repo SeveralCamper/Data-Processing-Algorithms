@@ -9,6 +9,7 @@
 #include "BinarySearch.h"
 #include "PhoneBook.h"
 #include "ListProcessingMethods.h"
+#include "MergeSort.h"
 
 int main () {   	
     int MassLength = 10;
@@ -107,7 +108,11 @@ int main () {
     }
     PrintList(queue);
 
+    list_t * merged_list = MergeSort(queue);
+    PrintList(queue);
+
     DeleteList(queue);
+    DeleteList(merged_list);
 
     return 0;
 }
