@@ -21,17 +21,17 @@ int CountListData(list_t *list);
 
 bool IsEmptyList(list_t *list);
 
-node_t* FindNode(list_t *list, int data);
+node_t *PopBackList(list_t *list);
+node_t *PopFrontList(list_t *list);
+node_t *FindNode(list_t *list, int data);
 
 list_t *CreateList();
 
 void PrintList(list_t *list);
 void DeleteList(list_t *list);
-void PopBackList(list_t *list);
 void FillIncList(list_t *list);
 void FillDecList(list_t *list);
 void FillRandList(list_t *list);
-void PopFrontList(list_t *list);
 void PushBackList(list_t *list, int data);
 void PushFrontList(list_t *list, int data);
 

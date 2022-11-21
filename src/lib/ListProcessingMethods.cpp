@@ -45,14 +45,6 @@ void DeleteList(list_t *list) {
     }
 }
 
-void PopBackList(list_t *list) {
-
-}
-
-void PopFrontList(list_t *list) {
-
-}
-
 void PushBackList(list_t *list, int data) {
     node_t *tmp = new Node(data);
     if (IsEmptyList(list)) {
@@ -130,8 +122,44 @@ void PrintList(list_t *list) {
     }
 }
 
-node_t* FindNode(list_t *list, int data) {
+node_t *FindNode(list_t *list, int data) {
     node_t* tmp = list->head_;
     while (tmp && tmp->data_ != data) tmp = tmp->next_;
 		return (tmp && tmp->data_ == data) ? tmp : nullptr;
+}
+
+node_t *PopBackList(list_t *list) {
+    node_t *res;
+    if (list == nullptr) {
+        return nullptr;
+    } else {
+        if (list->size_ == 1) {
+            res = list->head_;
+            list->head_ = nullptr;
+            list->size_--;
+            return res;
+        }
+        node_t *tmp = list->head_;
+        while(tmp->next_ != list->tail_) {
+            tmp = tmp->next_;
+        }
+        list->tail_ = tmp;
+        res = tmp->next_;
+        tmp->next_ = nullptr;
+        list->size_--;
+    }
+
+    return res;
+}
+
+node_t *PopFrontList(list_t *list) {
+    node_t *res;
+    if (list == nullptr) {
+        return nullptr;
+    } else {
+        res = list->head_;
+        list->head_ = list->head_->next_;
+    }
+
+    return res;
 }

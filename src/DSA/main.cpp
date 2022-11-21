@@ -67,7 +67,7 @@ int main () {
     std::cout << "Searching node: " << std::endl;
     PrintPhoneBookNode(&search); */
 
-    /* list_t *queue = CreateList();
+    list_t *queue = CreateList();
     for (int i = 0; i < 5; i++) {
         PushBackList(queue, i);
     }
@@ -85,7 +85,21 @@ int main () {
     FillRandList(queue);
     PrintList(queue);
     std::cout << CountListData(queue) <<std::endl;
-    DeleteList(queue); */
+    for (int i = 0 ; i < 10 ; i++) {
+        node_t *new_node = PopBackList(queue);
+        std::cout << new_node->data_ << std::endl;
+    }
+    PrintList(queue);
+    for (int i = 0; i < 10; i++) {
+        PushBackList(queue, i);
+    }
+    for (int i = 0 ; i < 10 ; i++) {
+        node_t *new_node = PopFrontList(queue);
+        std::cout << new_node->data_ << std::endl;
+    }
+    std::cout << queue->size_ << std::endl;
+    PrintList(queue);
+    DeleteList(queue);
 
     return 0;
 }
