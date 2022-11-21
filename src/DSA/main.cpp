@@ -67,12 +67,25 @@ int main () {
     std::cout << "Searching node: " << std::endl;
     PrintPhoneBookNode(&search); */
 
-    list_t *queue = CreateList();
-    DeleteList(queue);
+    /* list_t *queue = CreateList();
     for (int i = 0; i < 5; i++) {
         PushBackList(queue, i);
     }
 
+    for (int i = 0; i < 5; i++) {
+        PushFrontList(queue, i);
+    }
+
+    FillIncList(queue);
+    PrintList(queue);
+    std::cout << CountListData(queue) <<std::endl;
+    FillDecList(queue);
+    PrintList(queue);
+    std::cout << CountListData(queue) <<std::endl;
+    FillRandList(queue);
+    PrintList(queue);
+    std::cout << CountListData(queue) <<std::endl;
+    DeleteList(queue); */
 
     return 0;
 }
