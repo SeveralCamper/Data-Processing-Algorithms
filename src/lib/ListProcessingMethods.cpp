@@ -95,16 +95,16 @@ void FillDecList(list_t *list) {
     }
 }
 
-void FillRandList(list_t *list) {
+void FillRandList(list_t *list, int depth) { // the larger depth, the larger will be random numbers
     if (list != nullptr) {
-        int rand = std::rand() % 1000;
+        int rand = std::rand() % depth;
         node_t *tmp = list->head_;
         tmp->data_ = rand;
-        rand = std::rand() % 1000;
+        rand = std::rand() % depth;
         while (tmp->next_ != nullptr) {
             tmp->next_->data_ = rand;
             tmp = tmp->next_;
-            rand = std::rand() % 1000;
+            rand = std::rand() % depth;
         }   
     }
 }

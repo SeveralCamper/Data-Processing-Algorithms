@@ -31,8 +31,8 @@ void PrintList(list_t *list);
 void DeleteList(list_t *list);
 void FillIncList(list_t *list);
 void FillDecList(list_t *list);
-void FillRandList(list_t *list);
 void PushBackList(list_t *list, int data);
 void PushFrontList(list_t *list, int data);
+void FillRandList(list_t *list, int depth);
 
 #endif // LIST_PROCESSING_METHODS_H_

@@ -10,6 +10,7 @@
 #include "PhoneBook.h"
 #include "ListProcessingMethods.h"
 #include "MergeSort.h"
+#include "RadixSort.h"
 
 int main () {   	
     int MassLength = 10;
@@ -73,7 +74,7 @@ int main () {
         PushBackList(queue, i);
     }
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 20; i++) {
         PushFrontList(queue, i);
     }
 
@@ -83,10 +84,10 @@ int main () {
     FillDecList(queue);
     PrintList(queue);
     std::cout << CountListData(queue) <<std::endl;
-    FillRandList(queue);
+    FillRandList(queue, 10000);
     PrintList(queue);
     std::cout << CountListData(queue) <<std::endl;
-    for (int i = 0 ; i < 10 ; i++) {
+    /* for (int i = 0 ; i < 10 ; i++) {
         node_t *new_node = PopBackList(queue);
         std::cout << new_node->data_ << std::endl;
         delete(new_node);
@@ -109,10 +110,12 @@ int main () {
     PrintList(queue);
 
     list_t * merged_list = MergeSort(queue);
-    PrintList(queue);
+    PrintList(queue); */
+
+    RadixSort(queue, 4);
 
     DeleteList(queue);
-    DeleteList(merged_list);
+    // DeleteList(merged_list);
 
     return 0;
 }
