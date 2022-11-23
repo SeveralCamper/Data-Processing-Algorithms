@@ -12,7 +12,27 @@
 #include "MergeSort.h"
 #include "RadixSort.h"
 
-int main () {   	
+int main () {
+    int key = 0;
+    std::cout << "Welcome to my CPP Data Processing Algorithm Lib! ^_^" << std::endl;
+    std::cout << "Please enter one of the numbers below to proceed:" << std::endl;
+    std::cout << "1. Paste '1' to use methodes of array's processing." << std::endl;
+    std::cout << "2. Paste '2' to use methodes of list's processing (list, queue, or stack)." << std::endl;
+    std::cout << "3. Paste '3' to work with phonebook." << std::endl;
+    std::cout << "0. Paste '4' to exit." << std::endl;
+    std::cin >> key;
+    switch (key) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            std::cout << "Good bye! ^_^" << std::endl;
+            return;
+        };
+    
     int MassLength = 10;
     int Massive[MassLength];
     FillRand(Massive, MassLength, 10, 50);
