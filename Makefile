@@ -42,8 +42,9 @@ clean:
 	find ./bin -type f -name "DSA" -exec rm -f '{}' \;
 	find ./bin -type f -name "TestDSA" -exec rm -f '{}' \;
 
-format:
-	cd src; find . -name "*.cpp" -exec clang-format -i {} \;
-	cd src; find . -name "*.h" -exec clang-format -i {} \;
+clang-format:
+	cp materials/.clang-format . 
+	clang-format -i src/DSA/*.cpp src/lib/*.cpp src/lib/*.h
+	clang-format -n src/DSA/*.cpp src/lib/*.cpp src/lib/*.h
 
 .PHONY: clean test run all format 

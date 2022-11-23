@@ -3,6 +3,6 @@
 
 #include "ArrayProcessingMethods.h"
 
-void QuickSort(int * Array, int first, int last);
+void QuickSort(int* Array, int first, int last);
 
 #endif  // QUICK_SORT_H_

@@ -3,6 +3,6 @@
 
 #include "ArrayProcessingMethods.h"
 
-void ShakerSort(int * Array, int ArrayLength);
+void ShakerSort(int* Array, int ArrayLength);
 
 #endif  // SHAKER_SORT_H_

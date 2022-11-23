@@ -1,38 +1,44 @@
-#include <iostream>
-#include "SelectSort.h"
-#include "BubbleSort.h"
-#include "ShakerSort.h"
-#include "InsertSort.h"
-#include "ShellSort.h"
-#include "HeapSort.h"
-#include "QuickSort.h"
 #include "BinarySearch.h"
-#include "PhoneBook.h"
+#include "BubbleSort.h"
+#include "HeapSort.h"
+#include "InsertSort.h"
 #include "ListProcessingMethods.h"
 #include "MergeSort.h"
+#include "PhoneBook.h"
+#include "QuickSort.h"
 #include "RadixSort.h"
+#include "SelectSort.h"
+#include "ShakerSort.h"
+#include "ShellSort.h"
+#include <iostream>
 
-int main () {
+int main()
+{
     int key = 0;
-    std::cout << "Welcome to my CPP Data Processing Algorithm Lib! ^_^" << std::endl;
-    std::cout << "Please enter one of the numbers below to proceed:" << std::endl;
-    std::cout << "1. Paste '1' to use methodes of array's processing." << std::endl;
-    std::cout << "2. Paste '2' to use methodes of list's processing (list, queue, or stack)." << std::endl;
+    std::cout << "Welcome to my CPP Data Processing Algorithm Lib! ^_^"
+              << std::endl;
+    std::cout << "Please enter one of the numbers below to proceed:"
+              << std::endl;
+    std::cout << "1. Paste '1' to use methodes of array's processing."
+              << std::endl;
+    std::cout << "2. Paste '2' to use methodes of list's processing (list, "
+                 "queue, or stack)."
+              << std::endl;
     std::cout << "3. Paste '3' to work with phonebook." << std::endl;
     std::cout << "0. Paste '4' to exit." << std::endl;
     std::cin >> key;
     switch (key) {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            std::cout << "Good bye! ^_^" << std::endl;
-            return;
-        };
-    
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        std::cout << "Good bye! ^_^" << std::endl;
+        return;
+    };
+
     int MassLength = 10;
     int Massive[MassLength];
     FillRand(Massive, MassLength, 10, 50);
@@ -52,7 +58,8 @@ int main () {
     QuickSort(Massive, 0, MassLength - 1);
     PrintMas(Massive, MassLength);
 
-    std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) << std::endl; */
+    std::cout << "BSearch Result: " << BSearch(Massive, MassLength, 1) <<
+    std::endl; */
 
     /* phonebook_t PhoneBook;
     InitPhoneBook(&PhoneBook, MassLength);
@@ -89,7 +96,7 @@ int main () {
     std::cout << "Searching node: " << std::endl;
     PrintPhoneBookNode(&search); */
 
-    list_t *queue = CreateList();
+    list_t* queue = CreateList();
     for (int i = 0; i < 5; i++) {
         PushBackList(queue, i);
     }
@@ -100,13 +107,13 @@ int main () {
 
     FillIncList(queue);
     PrintList(queue);
-    std::cout << CountListData(queue) <<std::endl;
+    std::cout << CountListData(queue) << std::endl;
     FillDecList(queue);
     PrintList(queue);
-    std::cout << CountListData(queue) <<std::endl;
+    std::cout << CountListData(queue) << std::endl;
     FillRandList(queue, 10000);
     PrintList(queue);
-    std::cout << CountListData(queue) <<std::endl;
+    std::cout << CountListData(queue) << std::endl;
     /* for (int i = 0 ; i < 10 ; i++) {
         node_t *new_node = PopBackList(queue);
         std::cout << new_node->data_ << std::endl;

@@ -4,17 +4,17 @@
 #include <iostream>
 
 typedef struct Node {
-    int data_;
-    struct Node *next_;
-    Node(int data) : data_(data) {};
+  int data_;
+  struct Node *next_;
+  Node(int data) : data_(data){};
 } node_t;
 
 typedef struct List {
-    int size_ = 0;
-    node_t *head_;
-    node_t *tail_;
+  int size_ = 0;
+  node_t *head_;
+  node_t *tail_;
 
-    List() : head_(nullptr), tail_(nullptr) {};
+  List() : head_(nullptr), tail_(nullptr){};
 } list_t;
 
 int CountListData(list_t *list);
@@ -35,4 +35,4 @@ void PushBackList(list_t *list, int data);
 void PushFrontList(list_t *list, int data);
 void FillRandList(list_t *list, int depth);
 
-#endif // LIST_PROCESSING_METHODS_H_
+#endif  // LIST_PROCESSING_METHODS_H_

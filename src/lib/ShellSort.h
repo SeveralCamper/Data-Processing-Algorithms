@@ -3,6 +3,6 @@
 
 #include "ArrayProcessingMethods.h"
 
-void ShellSort(int * Array, int ArrayLength);
+void ShellSort(int* Array, int ArrayLength);
 
 #endif  // SHELL_SORT_H_

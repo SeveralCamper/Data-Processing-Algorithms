@@ -3,6 +3,6 @@
 
 #include "ArrayProcessingMethods.h"
 
-void HeapSort(int * Array, int ArrayLength);
+void HeapSort(int* Array, int ArrayLength);
 
 #endif  // HEAP_SORT_H_
