@@ -112,7 +112,7 @@ int main () {
     list_t * merged_list = MergeSort(queue);
     PrintList(queue); */
 
-    RadixSort(queue, 4);
+    queue = RadixSort(queue, 4);
 
     DeleteList(queue);
     // DeleteList(merged_list);

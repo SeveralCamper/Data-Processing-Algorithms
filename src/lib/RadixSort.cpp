@@ -1,14 +1,11 @@
 #include "RadixSort.h"
 
 list_t *RadixSort(list_t *list, int max_rank) {
-    list_t *result_list = CreateList();
-    result_list = list;
-
     for (int i = 1; i <= max_rank; i++) {
-        result_list = CountingSort(result_list, i);
+        CountingSort(list, i);
     }
 
-    return result_list;
+    return list;
 }
 
 int take_digit_rank(int data, int rank) {
@@ -22,7 +19,7 @@ int take_digit_rank(int data, int rank) {
     return digit;
 }
 
-list_t *CountingSort(list_t *list, int rank) {
+void CountingSort(list_t *list, int rank) {
     std::cout << "HERE" << std::endl;
     int data_matrix[10][list->size_];
 
@@ -39,7 +36,6 @@ list_t *CountingSort(list_t *list, int rank) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < list->size_; j++) {
                 if (digit == i && data_matrix[i][j] == INT32_MIN) {
-                    // std::cout << digit << " " << i << std::endl;
                     data_matrix[i][j] = data;
                     break;
                 }
@@ -61,7 +57,20 @@ list_t *CountingSort(list_t *list, int rank) {
         std::cout << std::endl;
     }
 
-    PrintList(result);
+    tmp = list->head_;
+    node_t *tmp_2 = result->head_;
+    while(list->head_ != nullptr) {
+        list->head_->data_ = result->head_->data_;
+        list->head_ = list->head_->next_;
+        result->head_ = result->head_->next_;
+    }
+    list->head_ = tmp;
+    result->head_ = tmp_2;
+    tmp = nullptr;
+    tmp_2 = nullptr;
+    delete(tmp);
+    delete(tmp_2);
+    DeleteList(result);
 
-    return result;
+    PrintList(list);
 }
